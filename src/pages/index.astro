@@ -1,0 +1,25 @@
+---
+// Layouts
+import BaseLayout from "../layouts/BaseLayout.astro";
+// Components
+import AudioElement from "../components/AudioElement.astro";
+import MusicTitle from "../components/MusicTitle.astro";
+import MusicImage from "../components/MusicImage.astro";
+import AudioPlayerApp from "../components/AudioPlayerApp.astro";
+---
+
+<BaseLayout>
+
+	<div class="music__container">
+
+		<AudioElement />
+		
+		<MusicTitle />
+		
+		<MusicImage />
+		
+		<AudioPlayerApp />
+
+	  </div>
+
+</BaseLayout>

@@ -1,0 +1,131 @@
+---
+import PlayIcon from "./PlayIcon.astro";
+import BackIcon from "./BackIcon.astro";
+import NextIcon from "./NextIcon.astro";
+---
+
+<div class="music__player">
+    <div class="music__player--progress">
+      <div class="progress"></div>
+    </div>
+  
+    <button id="prev" class="action">
+      <!-- <i class="ph-skip-back-circle"></i> -->
+       <BackIcon class="ph-skip-back-circle">
+    
+      </button>
+  
+    <button id="play" class="action">
+
+      <!-- <i class="ph-play-circle"></i> -->
+       <PlayIcon class="ph-play-circle" />
+    
+    </button>
+  
+    <button id="next" class="action">
+      <!-- <i class="ph-skip-forward-circle"></i> -->
+      <NextIcon class="ph-skip-forward-circle" />
+       
+    </button>
+  
+    <button class="speed"><p>1.0x</p></button>
+  
+  </div>
+
+
+  <style>
+
+.music__player {
+  background-color: var(--light);
+
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  padding: .5rem 1rem;
+  
+  position: relative;
+  
+  z-index: initial;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+  place-items: center;
+  grid-gap: 1rem;
+  transition: var(--transition);
+}
+
+.music__player.playing {
+  
+}
+
+.action {
+  background-color: var(--light);
+  color: var(--blue);
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.action:is(:hover, :focus) {
+  color: var(--pink);
+  outline: none;
+  transition: var(--transition);
+}
+
+.music__player--progress {
+  position: absolute;
+  z-index: -1;
+  height: 10px;
+  width: 100%;
+  top: -10%;
+  background-color: var(--blue);
+  overflow: hidden;
+  transform: translateY(120%);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.music__player.playing .music__player--progress {
+  transform: translateY(0);
+  z-index: 0;
+}
+
+.progress {
+  position: absolute;
+  background-color: var(--pink);
+  width: 0%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.speed {
+  position: absolute;
+  height: 3.5rem;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--light);
+  background-color: var(--blue);
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  display: grid;
+  
+  place-items: center;
+  padding: .7rem 1rem .5rem;
+  border: 6px solid var(--blue);
+  
+  z-index: -1;
+  cursor: pointer;
+}
+
+.speed:is(:hover, :focus) {
+  background-color: var(--light);
+  color: var(--blue);
+}
+
+.music__player.playing .speed {
+  transform: translate(-50%, 90%);
+}
+
+  </style>
