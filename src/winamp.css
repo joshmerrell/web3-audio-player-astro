@@ -1,0 +1,15 @@
+@font-face {
+    font-family:"Pixelated Numbers";
+    src: url("/fonts/PixelatedNumbers.ttf") format("truetype");
+}
+
+.winamp-section {
+    image-rendering: crisp-edges;
+}
+
+#main-section {
+    width: 550px;
+    height: 232px;
+    background-image: url('/ui/bitmap/126.png');
+    background-size: cover;
+}
