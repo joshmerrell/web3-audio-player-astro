@@ -3,6 +3,10 @@
     src: url("/fonts/PixelatedNumbers.ttf") format("truetype");
 }
 
+.debug-border {
+    border: 2px solid #f00;
+}
+
 .winamp-section {
     image-rendering: crisp-edges;
 }
@@ -12,4 +16,14 @@
     height: 232px;
     background-image: url('/ui/bitmap/126.png');
     background-size: cover;
+    /* 16x10(?) px grid if possible */
+}
+
+#main-title {
+    width: 100%;
+    height: 32px;
+    display: inline-block;
+    background: url('/ui/bitmap/150.png') no-repeat;
+    background-size: 688px 197px;
+    background-position: -54px 0px;
 }
